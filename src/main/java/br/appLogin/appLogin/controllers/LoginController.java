@@ -1,5 +1,6 @@
 package br.appLogin.appLogin.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.appLogin.appLogin.model.Usuario;
+import br.appLogin.appLogin.repository.UsuarioRepository;
 import jakarta.validation.Valid;
 
 
 @Controller
 public class LoginController {
 
-	private Usuario ur;
+	@Autowired
+	private UsuarioRepository ur;
 	
 	@GetMapping("/login")
 	public String Login() {
@@ -32,11 +35,11 @@ public class LoginController {
 		
 		if(result.hasErrors()) {
 			return "redirect:/cadastroUsuario";
-		}else {
-			
 		}
+			ur.save(usuario);
 		
-		return null;
+			
+		return "redirect:/login";
 	}
 	
 }
