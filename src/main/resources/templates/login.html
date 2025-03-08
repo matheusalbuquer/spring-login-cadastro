@@ -68,7 +68,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form method="post">
+        <form action="/logar" method="post">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
@@ -76,8 +76,8 @@
             <div class="input-group">
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-            	<a href="/cadastro">Registre-se</a>
 				</div>
+				
             <button type="submit" class="login-btn">Entrar</button>
         </form>
     </div>
