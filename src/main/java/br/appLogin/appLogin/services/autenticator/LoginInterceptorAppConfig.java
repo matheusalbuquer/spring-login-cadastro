@@ -1,5 +1,26 @@
 package br.appLogin.appLogin.services.autenticator;
 
-public class LoginInterceptorAppConfig {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Configuration
+public class LoginInterceptorAppConfig implements WebMvcConfigurer {
+
+	@Autowired
+	private LoginInterceptor logininteceptor;
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(logininteceptor).excludePathPatterns(
+				"/login",
+				"/logar",
+				"error",
+				"/cadastroUsuario"
+				);
+	}
+	
+	
+	
 }
