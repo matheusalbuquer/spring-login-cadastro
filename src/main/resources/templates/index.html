@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
+    <link rel="stylesheet" href="style.css">
+	<style>
+		*{margin: 0; padding: 0;}
+		.parte-de-cima{background-color: aqua; height: 70px; width: 1200;}
+		.texto-principal{position: absolute; left: 1200px;top: 22px; }
+	</style>
 </head>
 <body>
-	<p>Olá <span th:text= "${nome}"></span></p>
-   	<h1>Bem vindo a dashboard!</h1>
-    
+	<header>
+		
+		<div class="parte-de-cima">
+			<p class="texto-principal">Olá <span th:text= "${nome}"></span><br>Bem vindo</br></p>
+		   	<h1>Bem vindo a dashboard!</h1>
+		<div>
+			
+	</header>
+	
 </body>
 </html>
