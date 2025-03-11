@@ -53,14 +53,6 @@ public class LoginController {
 	}
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	@GetMapping("/cadastroUsuario")
 	public String cadastrar() {
 		return "cadastro";
@@ -77,5 +69,6 @@ public class LoginController {
 			
 		return "redirect:/login";
 	}
+	
 	
 }
