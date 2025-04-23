@@ -37,7 +37,9 @@ public class LoginController {
 		return "index";
 	}
 	
-	
+	public String logout
+
+
 	@PostMapping("/logar")
 	public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) throws UnsupportedEncodingException {
 	    Usuario usuarioLogado = this.ur.login(usuario.getEmail(), usuario.getSenha());
