@@ -36,8 +36,13 @@ public class LoginController {
 		model.addAttribute("nome",CookieService.getCookie(request, "nomeUsuario"));
 		return "index";
 	}
-	
-	public String logout
+
+	@GetMapping("/sair")
+	public String sair(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		CookieService.setCookie(response, "usuarioId", "", 0);
+		request.getSession().invalidate();
+		return "redirect:/login";
+	}
 
 
 	@PostMapping("/logar")
